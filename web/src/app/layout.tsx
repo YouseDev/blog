@@ -1,10 +1,9 @@
-import { Providers } from "@/ui/global/Provider"
-
+import Container from "@/ui/global/Container"
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="ar-SA">
             <body>
-                <Providers>{children}</Providers>
+                <Container>{children}</Container>
             </body>
         </html>
     )

@@ -1,7 +1,16 @@
-import { Heading } from "@chakra-ui/react"
+import HomeContainer from "@/ui/containers/HomeContainer"
+import { getManyPostMetaData } from "@/utils/PostTools"
 
-const Home = () => {
-    return <Heading>السلام عليكم ورحمة الله وبركاته</Heading>
+// metadata for the home page
+export const metadata = {
+    title: "Blog",
+    description: "Blog",
 }
 
-export default Home
+// main component for the home page
+const HomePage = () => {
+    const allPostsData = getManyPostMetaData()
+    return <HomeContainer allPostsData={allPostsData} />
+}
+
+export default HomePage

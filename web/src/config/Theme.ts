@@ -13,6 +13,7 @@ const Theme = extendTheme({
         heading: `${customFont.style.fontFamily}`,
         body: `${customFont.style.fontFamily}`,
     },
+
     styles: {
         global: {
             "html, body": {
@@ -20,10 +21,10 @@ const Theme = extendTheme({
                 flexDirection: "column",
                 minHeight: "100vh",
                 overflowX: "hidden",
-                overscrollBehavior: "none", // Prevents bounce effect
+                overscrollBehavior: "none",
                 backgroundColor: "gray.900",
                 direction: "rtl",
-                color: "#fff",
+                color: "gray.100",
             },
         },
     },
