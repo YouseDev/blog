@@ -1,5 +1,5 @@
 import HomeContainer from "@/ui/containers/HomeContainer"
-import { getManyPostMetaData } from "@/utils/PostTools"
+import { getManyPostMetaData } from "@/utils/DataUtils"
 
 // metadata for the home page
 export const metadata = {

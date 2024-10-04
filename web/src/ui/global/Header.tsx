@@ -21,14 +21,13 @@ const Header = () => {
         >
             <VStack
                 w="100%"
-                maxW="container.lg"
+                maxW="container.md"
                 mx="auto"
                 justifyContent="center"
                 alignItems="center"
                 spacing="8"
-                borderBottom="1px"
-                borderColor="blackAlpha.900"
                 py="8"
+                pb="8"
             >
                 <Box>
                     <Image
@@ -46,8 +45,8 @@ const Header = () => {
                 </Box>
                 <Box px="1">
                     <Text textAlign="center" fontSize="xl" color="gray.500">
-                        مبرمج منذ 2010 | شغوف بتطوير التطبيقات الذكية | أشارك
-                        أفكار عن البرمجة والذكاء الاصطناعي
+                        مبرمج منذ 2010 | شغوف بتطوير تطبيقات ذكية | أشارك أفكار
+                        عن البرمجة والذكاء الاصطناعي
                     </Text>
                 </Box>
                 <HStack
@@ -73,6 +72,7 @@ const Header = () => {
                         _hover={{ textDecoration: "none" }}
                         href="https://x.com/yousefxdev"
                         isExternal
+                        rel="nofollow"
                     >
                         <Text fontSize={"lg"} color={"gray.200"}>
                             تواصل

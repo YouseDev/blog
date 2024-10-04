@@ -9,3 +9,10 @@ export interface TPostData {
 export interface TPostDataWithContent extends TPostData {
     content: string
 }
+
+export interface TProject {
+    title: string
+    description: string
+    image: string
+    link: string
+}

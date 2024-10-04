@@ -1,7 +1,14 @@
 "use client"
 
 import { TPostData } from "@/types/ClientTypes"
-import { Box, Heading, VStack, Text, SimpleGrid } from "@chakra-ui/react"
+import {
+    Box,
+    Heading,
+    VStack,
+    Text,
+    SimpleGrid,
+    Divider,
+} from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -17,15 +24,15 @@ const HomeContainer = ({ allPostsData }: { allPostsData: TPostData[] }) => {
                 minH="100vh"
                 maxW="container.lg"
                 mx="auto"
-                mt="12"
+                mt="10"
                 mb="200px"
                 spacing="6"
             >
                 <SimpleGrid
                     columns={{ base: 1, md: 1 }}
-                    spacing={16}
                     w="100%"
                     justifyContent="center"
+                    spacing="20"
                 >
                     {allPostsData.map((post) => (
                         <Link key={post.slug} href={`/post/${post.slug}`}>
@@ -44,8 +51,8 @@ const PostCard = ({ post }: { post: TPostData }) => {
             as="article"
             key={post.slug}
             overflow="hidden"
-            borderRadius={{ base: "none", md: "lg" }}
-            bg="gray.800"
+            borderRadius="lg"
+            bg="gray.700"
             w="100%"
             aspectRatio="16/9"
             backgroundImage={`url(${post.image})`}
@@ -59,7 +66,7 @@ const PostCard = ({ post }: { post: TPostData }) => {
         >
             <VStack
                 w="100%"
-                bg="blackAlpha.700"
+                bg="blackAlpha.800"
                 bottom="0"
                 justifyContent="center"
                 alignItems="flex-start"
@@ -70,7 +77,6 @@ const PostCard = ({ post }: { post: TPostData }) => {
                 <Heading as="h3" size="lg">
                     {post.title}
                 </Heading>
-                <Text color="gray.300">{post.description}</Text>
             </VStack>
         </Box>
     )

@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <Box
             w="100%"
-            bg="gray.800"
+            bg="gray.900"
             p="1rem"
             minH="24px"
             display={"flex"}
@@ -15,6 +15,7 @@ const Footer = () => {
                 mt="1"
                 _hover={{ textDecoration: "none" }}
                 isExternal
+                rel="nofollow"
                 href="https://github.com/YouseDev/blog"
             >
                 Source Code

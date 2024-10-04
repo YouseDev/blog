@@ -1,5 +1,5 @@
-import { getPostContent, getPostMetaData } from "@/utils/PostTools"
-import { getManyPostMetaData } from "@/utils/PostTools"
+import { getPostContent, getPostMetaData } from "@/utils/DataUtils"
+import { getManyPostMetaData } from "@/utils/DataUtils"
 import PostContainer from "@/ui/containers/PostContainer"
 import { notFound } from "next/navigation"
 
