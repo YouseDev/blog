@@ -1,16 +1,10 @@
 "use client"
 
 import { TPostData } from "@/types/ClientTypes"
-import {
-    Box,
-    Heading,
-    VStack,
-    Text,
-    SimpleGrid,
-    Divider,
-} from "@chakra-ui/react"
+import { Box, Heading, VStack, SimpleGrid } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 
 const HomeContainer = ({ allPostsData }: { allPostsData: TPostData[] }) => {
     return (
@@ -55,18 +49,22 @@ const PostCard = ({ post }: { post: TPostData }) => {
             bg="gray.700"
             w="100%"
             aspectRatio="16/9"
-            backgroundImage={`url(${post.image})`}
-            backgroundSize="cover"
-            backgroundPosition="center"
-            display="flex"
-            flexDirection="column"
-            justifyContent="flex-end"
+            position="relative"
             maxW="container.md"
             mx="auto"
         >
+            <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+            />
             <VStack
                 w="100%"
                 bg="blackAlpha.800"
+                position="absolute"
                 bottom="0"
                 justifyContent="center"
                 alignItems="flex-start"

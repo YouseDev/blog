@@ -3,13 +3,13 @@ import {
     Box,
     Heading,
     Text,
-    Image,
     HStack,
     Link,
     Icon,
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import NextLink from "next/link"
+import Image from "next/image"
 import { RxDividerVertical } from "react-icons/rx"
 
 const Header = () => {
@@ -29,13 +29,17 @@ const Header = () => {
                 py="8"
                 pb="8"
             >
-                <Box>
+                <Box position="relative" width={120} height={120}>
                     <Image
                         src="/imgs/1.png"
                         alt="Developer Avatar"
-                        width={120}
-                        height={120}
-                        borderRadius="full"
+                        fill
+                        sizes="120px"
+                        priority
+                        style={{
+                            objectFit: "cover",
+                            borderRadius: "50%",
+                        }}
                     />
                 </Box>
                 <Box>

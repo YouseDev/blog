@@ -8,10 +8,10 @@ import {
     SimpleGrid,
     Text,
     Stack,
-    Image,
     Link,
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const ProjectContainer = ({ projects }: { projects: TProject[] }) => {
     return (
@@ -58,7 +58,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
             borderRadius="lg"
             bg="gray.900"
             w="100%"
-            h={{ base: "100%", md: "200px" }}
+            h={{ base: "auto", md: "200px" }}
             flexDirection={{ base: "column", md: "row" }}
             justifyContent="center"
             alignItems="center"
@@ -66,26 +66,28 @@ const ProjectCard = ({ project }: { project: TProject }) => {
             mx="auto"
         >
             <Box
-                maxW={{ base: "100%", md: "300px" }}
-                h={{ base: "100%", md: "200px" }}
+                maxW={{ base: "100%", md: "264px" }}
+                w="100%"
+                h={{ base: "200px", md: "200px" }}
+                position="relative"
             >
                 <Image
                     src={project.image}
                     alt={project.title}
-                    objectFit="cover"
-                    w="100%"
-                    h="100%"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    style={{ objectFit: "cover" }}
                 />
             </Box>
             <VStack
-                spacing="6"
+                spacing={{ base: "4", md: "6" }}
                 w="100%"
                 bottom="0"
                 justifyContent="center"
                 alignItems="flex-start"
-                px="4"
-                pb={{ base: "4", md: "4" }}
-                pt={{ base: "4", md: "6" }}
+                pb={{ base: "6", md: "4" }}
+                pt="6"
+                px={{ base: "2", md: "4" }}
             >
                 <Heading as="h3" size="lg">
                     {project.title}

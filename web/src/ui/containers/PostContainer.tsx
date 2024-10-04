@@ -10,17 +10,17 @@ import {
     HStack,
     Icon,
     Box,
-    Image,
     Divider,
     List,
     ListItem,
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { FaCalendar, FaChevronLeft, FaHome } from "react-icons/fa"
+import { FaChevronLeft, FaHome } from "react-icons/fa"
 import { FaCalendarDays } from "react-icons/fa6"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import Image from "next/image"
 
 const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
     return (
@@ -57,13 +57,15 @@ const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
                     position="relative"
                     borderRadius="lg"
                     overflow="hidden"
+                    h={{ base: "420px", md: "420px" }}
                 >
                     <Image
                         src={postData.image}
-                        alt={postData.title}
-                        w="100%"
-                        h={{ base: "420px", md: "420px" }}
-                        objectFit="cover"
+                        alt={`صورة ${postData.title}`}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="(max-width: 860px) 100vw, 860px"
+                        priority
                     />
                     <VStack
                         display="flex"
