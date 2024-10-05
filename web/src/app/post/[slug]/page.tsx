@@ -77,8 +77,8 @@ export const generateMetadata = async ({
     }
 }
 
-// Generate Schema.org JSON-LD script
-const generateSchemaOrgScript = (
+// Generate Schema.org JSON-LD script for BlogPosting
+const generateBlogPostingSchema = (
     postData: TPostDataWithContent,
     slug: string,
 ) => {
@@ -109,30 +109,43 @@ const generateSchemaOrgScript = (
         },
         keywords: postData.tags.join(", "),
         articleBody: postData.content,
-        breadcrumb: {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-                {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: SEO.siteName,
-                    item: SEO.siteUrl,
-                },
-                {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: postData.title,
-                    item: postUrl,
-                },
-            ],
-        },
     }
 
     return (
         <Script
-            id="schema-org"
+            id="blog-posting-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+    )
+}
+
+// Generate Schema.org JSON-LD script for BreadcrumbList
+const generateBreadcrumbSchema = (slug: string, title: string) => {
+    const breadcrumbData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: SEO.siteName,
+                item: SEO.siteUrl,
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: title,
+                item: `${SEO.siteUrl}/post/${slug}`,
+            },
+        ],
+    }
+
+    return (
+        <Script
+            id="breadcrumb-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
         />
     )
 }
@@ -147,10 +160,11 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
         return notFound()
     }
 
-    // return the post container with Schema.org script
+    // return the post container with Schema.org scripts
     return (
         <>
-            {generateSchemaOrgScript(postData, params.slug)}
+            {generateBlogPostingSchema(postData, params.slug)}
+            {generateBreadcrumbSchema(params.slug, postData.title)}
             <PostContainer postData={postData} />
         </>
     )
