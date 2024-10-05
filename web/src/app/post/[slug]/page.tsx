@@ -4,7 +4,8 @@ import PostContainer from "@/ui/containers/PostContainer"
 import { notFound } from "next/navigation"
 import SEO from "@/config/SEO"
 import Script from "next/script"
-import { TPostData, TPostDataWithContent } from "@/types/ClientTypes"
+import { TPostDataWithContent } from "@/types/ClientTypes"
+import { marked } from "marked"
 
 // force static generation
 export const dynamic = "force-static"
@@ -108,7 +109,7 @@ const generateBlogPostingSchema = (
             "@id": postUrl,
         },
         keywords: postData.tags.join(", "),
-        articleBody: postData.content,
+        articleBody: marked(postData.content),
     }
 
     return (
