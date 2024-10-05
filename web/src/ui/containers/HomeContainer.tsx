@@ -18,7 +18,7 @@ const HomeContainer = ({ allPostsData }: { allPostsData: TPostData[] }) => {
                 minH="100vh"
                 maxW="container.lg"
                 mx="auto"
-                mt="10"
+                mt="2"
                 mb="200px"
                 spacing="6"
             >

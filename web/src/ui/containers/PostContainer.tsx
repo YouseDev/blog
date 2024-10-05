@@ -41,8 +41,8 @@ const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
                     alignItems="flex-start"
                     w="100%"
                     spacing="3"
-                    px="4"
                     maxW="860px"
+                    px={{ base: "2", md: "0" }}
                 >
                     <PostBreadcrumb title={postData.title} />
                     <HStack w="100%" justifyContent="flex-end">
@@ -125,8 +125,8 @@ const PostContent = ({ content }: { content: string }) => {
             spacing="6"
             justifyContent="flex-start"
             alignItems="flex-start"
-            px="4"
             mt="6"
+            px={{ base: "2", md: "0" }}
         >
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}

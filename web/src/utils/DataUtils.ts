@@ -10,7 +10,7 @@ const postsDirectory = path.join(process.cwd(), "src/data/posts")
 const projectsDirectory = path.join(process.cwd(), "src/data/projects")
 
 // Retrieves and sorts all post metadata from markdown files
-export const getManyPostMetaData = (): TPostData[] => {
+export const getAllPostMetaData = (): TPostData[] => {
     try {
         const fileNames = fs.readdirSync(postsDirectory)
         const allPostsData = fileNames
