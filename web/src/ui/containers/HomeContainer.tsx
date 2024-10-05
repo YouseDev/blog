@@ -5,14 +5,11 @@ import { Box, Heading, VStack, SimpleGrid } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import AnimationConfig from "@/config/AnimationConfig"
 
 const HomeContainer = ({ allPostsData }: { allPostsData: TPostData[] }) => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-        >
+        <motion.div {...AnimationConfig}>
             <VStack
                 w="100%"
                 minH="100vh"
@@ -55,7 +52,7 @@ const PostCard = ({ post }: { post: TPostData }) => {
         >
             <Image
                 src={post.image}
-                alt={post.title}
+                alt={`${post.title} صورة`}
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

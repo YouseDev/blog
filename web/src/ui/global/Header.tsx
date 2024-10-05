@@ -11,15 +11,12 @@ import NextLink from "next/link"
 import Image from "next/image"
 import { RxDividerVertical } from "react-icons/rx"
 import { motion } from "framer-motion"
+import AnimationConfig from "@/config/AnimationConfig"
 
 const Header = () => {
     return (
         <Box as="header">
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
-            >
+            <motion.div {...AnimationConfig}>
                 <VStack
                     w="100%"
                     maxW="container.md"

@@ -21,14 +21,11 @@ import { FaCalendarDays } from "react-icons/fa6"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import Image from "next/image"
+import AnimationConfig from "@/config/AnimationConfig"
 
 const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-        >
+        <motion.div {...AnimationConfig}>
             <VStack
                 mt="8"
                 w="100%"

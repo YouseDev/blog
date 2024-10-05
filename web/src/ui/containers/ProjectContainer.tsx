@@ -1,5 +1,6 @@
 "use client"
 
+import AnimationConfig from "@/config/AnimationConfig"
 import { TProject } from "@/types/ClientTypes"
 import {
     Box,
@@ -15,11 +16,7 @@ import Image from "next/image"
 
 const ProjectContainer = ({ projects }: { projects: TProject[] }) => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-        >
+        <motion.div {...AnimationConfig}>
             <VStack
                 w="100%"
                 minH="100vh"
