@@ -143,7 +143,7 @@ const PostContent = ({ content }: { content: string }) => {
                     p: ({ node, ...props }) => (
                         <Text
                             lineHeight="1.8"
-                            fontSize="lg"
+                            fontSize={{ base: "lg", md: "xl" }}
                             mb={2}
                             {...props}
                         />

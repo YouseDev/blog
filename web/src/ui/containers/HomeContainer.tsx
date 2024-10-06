@@ -53,10 +53,13 @@ const PostCard = ({ post }: { post: TPostData }) => {
             <Image
                 src={post.image}
                 alt={`${post.title} صورة`}
-                fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority
+                priority={false} // Remove priority for non-hero images
+                width={768}
+                height={432}
+                loading="lazy" // Add lazy loading for images not immediately visible
+                quality={80} // Adjust quality to balance between file size and visual quality
             />
             <VStack
                 w="100%"
