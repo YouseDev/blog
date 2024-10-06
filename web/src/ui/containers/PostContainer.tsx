@@ -151,7 +151,13 @@ const PostContent = ({ content }: { content: string }) => {
                     hr: ({ node, ...props }) => (
                         <Divider my="4" opacity="0" {...props} />
                     ),
-                    li: ({ node, ...props }) => <ListItem pb="4" {...props} />,
+                    li: ({ node, ...props }) => (
+                        <ListItem
+                            fontSize={{ base: "lg", md: "xl" }}
+                            pb="4"
+                            {...props}
+                        />
+                    ),
                 }}
             >
                 {content}
