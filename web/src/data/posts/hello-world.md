@@ -2,7 +2,7 @@
 title: "مرحبا بالعالم!"
 date: "2024-09-06"
 description: "مرحبا بالعالم!"
-image: "/imgs/posts/hello-world.webp"
+image: "/imgs/posts/hello-world.avif"
 tags: ["مقدمة", "مرحبا", "بداية"]
 ---
 

@@ -44,7 +44,7 @@ const PostCard = ({ post }: { post: TPostData }) => {
             overflow="hidden"
             borderRadius="lg"
             bg="gray.700"
-            w="100%"
+            w={{ base: "95%", md: "100%" }}
             aspectRatio="16/9"
             position="relative"
             maxW="container.md"
@@ -54,12 +54,13 @@ const PostCard = ({ post }: { post: TPostData }) => {
                 src={post.image}
                 alt={`${post.title} صورة`}
                 style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={false} // Remove priority for non-hero images
-                width={768}
-                height={432}
-                loading="lazy" // Add lazy loading for images not immediately visible
-                quality={80} // Adjust quality to balance between file size and visual quality
+                sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
+                fill={true}
+                loading="eager"
+                quality={80}
+                placeholder="blur"
+                blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOcVsxQDwAEOgGKSgA5SAAAAABJRU5ErkJggg=="
             />
             <VStack
                 w="100%"

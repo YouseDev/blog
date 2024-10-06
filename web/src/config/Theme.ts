@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react"
 import { Tajawal } from "next/font/google"
 
 export const customFont = Tajawal({
-    weight: ["400", "700", "900"],
+    weight: ["400", "700"],
     subsets: ["arabic"],
     display: "swap",
     preload: true,
