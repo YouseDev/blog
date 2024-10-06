@@ -1,6 +1,6 @@
 ---
-title: "مشروع مهم جدا"
-description: "مشروع مهم جدا"
-image: "/imgs/posts/t1.webp"
+title: "تحت الإنشاء"
+description: "تحت الإنشاء"
+image: "/imgs/posts/hello-world.webp"
 link: "https://www.google.com"
 ---
