@@ -159,8 +159,8 @@ const PostContent = ({ content }: { content: string }) => {
                     ),
                     p: ({ node, ...props }) => (
                         <Text
-                            lineHeight="1.8"
-                            fontSize={{ base: "1.15rem", md: "1.35rem" }}
+                            lineHeight="2"
+                            fontSize={{ base: "1.15rem", md: "1.40rem" }}
                             mb={2}
                             {...props}
                         />
@@ -170,7 +170,7 @@ const PostContent = ({ content }: { content: string }) => {
                     ),
                     li: ({ node, ...props }) => (
                         <ListItem
-                            fontSize={{ base: "1.15rem", md: "1.25rem" }}
+                            fontSize={{ base: "1.15rem", md: "1.40rem" }}
                             pb="4"
                             {...props}
                         />
@@ -181,7 +181,7 @@ const PostContent = ({ content }: { content: string }) => {
                             isExternal
                             rel="nofollow noopener noreferrer"
                             color="blue.500"
-                            fontSize={{ base: "1.15rem", md: "1.35rem" }}
+                            fontSize={{ base: "1.15rem", md: "1.40rem" }}
                             _hover={{
                                 color: "blue.600",
                                 textDecoration: "none",
