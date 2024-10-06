@@ -12,6 +12,7 @@ import {
     Divider,
     List,
     ListItem,
+    Link as ChakraLink,
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -138,7 +139,15 @@ const PostContent = ({ content }: { content: string }) => {
                         <Text
                             fontWeight={"bold"}
                             as="h3"
-                            size="1.5rem"
+                            fontSize="1.5rem"
+                            {...props}
+                        />
+                    ),
+                    h4: ({ node, ...props }) => (
+                        <Text
+                            fontWeight={"bold"}
+                            as="h4"
+                            fontSize="1.25rem"
                             {...props}
                         />
                     ),
@@ -151,7 +160,7 @@ const PostContent = ({ content }: { content: string }) => {
                     p: ({ node, ...props }) => (
                         <Text
                             lineHeight="1.8"
-                            fontSize={{ base: "1.15rem", md: "1.25rem" }}
+                            fontSize={{ base: "1.15rem", md: "1.35rem" }}
                             mb={2}
                             {...props}
                         />
@@ -163,6 +172,20 @@ const PostContent = ({ content }: { content: string }) => {
                         <ListItem
                             fontSize={{ base: "1.15rem", md: "1.25rem" }}
                             pb="4"
+                            {...props}
+                        />
+                    ),
+                    a: ({ node, ...props }) => (
+                        <ChakraLink
+                            href={props.href}
+                            isExternal
+                            rel="nofollow noopener noreferrer"
+                            color="blue.500"
+                            fontSize={{ base: "1.15rem", md: "1.35rem" }}
+                            _hover={{
+                                color: "blue.600",
+                                textDecoration: "none",
+                            }}
                             {...props}
                         />
                     ),
