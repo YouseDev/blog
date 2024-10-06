@@ -2,7 +2,6 @@
 
 import { TPostDataWithContent } from "@/types/ClientTypes"
 import {
-    Heading,
     Text,
     VStack,
     Breadcrumb,
@@ -22,6 +21,7 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import Image from "next/image"
 import AnimationConfig from "@/config/AnimationConfig"
+import CustomHeading from "../shared/CustomHeading"
 
 const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
     return (
@@ -73,13 +73,11 @@ const PostContainer = ({ postData }: { postData: TPostDataWithContent }) => {
                         left="0"
                         right="0"
                         bg="blackAlpha.800"
-                        pb="4"
-                        py="2"
-                        px="4"
+                        p="4"
                     >
-                        <Heading pt="3" as="h1" size="xl" color="white">
+                        <CustomHeading size="3xl">
                             {postData.title}
-                        </Heading>
+                        </CustomHeading>
                     </VStack>
                 </Box>
 
@@ -129,10 +127,20 @@ const PostContent = ({ content }: { content: string }) => {
                 remarkPlugins={[remarkGfm]}
                 components={{
                     h2: ({ node, ...props }) => (
-                        <Heading as="h2" size="xl" {...props} />
+                        <Text
+                            fontWeight={"bold"}
+                            as="h2"
+                            fontSize="2rem"
+                            {...props}
+                        />
                     ),
                     h3: ({ node, ...props }) => (
-                        <Heading as="h3" size="lg" {...props} />
+                        <Text
+                            fontWeight={"bold"}
+                            as="h3"
+                            size="1.5rem"
+                            {...props}
+                        />
                     ),
                     ul: ({ node, ...props }) => (
                         <List mr={6} styleType="disc" {...props} />
@@ -143,7 +151,7 @@ const PostContent = ({ content }: { content: string }) => {
                     p: ({ node, ...props }) => (
                         <Text
                             lineHeight="1.8"
-                            fontSize={{ base: "lg", md: "xl" }}
+                            fontSize={{ base: "1.15rem", md: "1.25rem" }}
                             mb={2}
                             {...props}
                         />
@@ -153,7 +161,7 @@ const PostContent = ({ content }: { content: string }) => {
                     ),
                     li: ({ node, ...props }) => (
                         <ListItem
-                            fontSize={{ base: "lg", md: "xl" }}
+                            fontSize={{ base: "1.15rem", md: "1.25rem" }}
                             pb="4"
                             {...props}
                         />

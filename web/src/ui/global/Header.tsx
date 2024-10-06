@@ -12,6 +12,7 @@ import Image from "next/image"
 import { RxDividerVertical } from "react-icons/rx"
 import { motion } from "framer-motion"
 import AnimationConfig from "@/config/AnimationConfig"
+import CustomHeading from "../shared/CustomHeading"
 
 const Header = () => {
     return (
@@ -41,9 +42,15 @@ const Header = () => {
                         />
                     </Box>
                     <Box>
-                        <Heading textAlign="center" size="2xl" color="gray.200">
+                        <CustomHeading
+                            size="3xl"
+                            props={{
+                                textAlign: "center",
+                                color: "gray.200",
+                            }}
+                        >
                             مدونة يوسف
-                        </Heading>
+                        </CustomHeading>
                     </Box>
                     <Box px="1">
                         <Text textAlign="center" fontSize="xl" color="gray.500">

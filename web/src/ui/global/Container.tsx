@@ -1,7 +1,7 @@
 "use client"
 
 import Theme from "@/config/Theme"
-import { Box, ChakraProvider } from "@chakra-ui/react"
+import { Box, ChakraBaseProvider } from "@chakra-ui/react"
 import Header from "./Header"
 import Footer from "./Footer"
 import { useMemo } from "react"
@@ -15,11 +15,11 @@ const Container = ({ children }: { children: React.ReactNode }) => {
     }, [pathname])
 
     return (
-        <ChakraProvider theme={Theme}>
+        <ChakraBaseProvider theme={Theme}>
             {!hideHeader && <Header />}
             <Box as="main">{children}</Box>
             {!hideHeader && <Footer />}
-        </ChakraProvider>
+        </ChakraBaseProvider>
     )
 }
 

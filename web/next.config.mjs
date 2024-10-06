@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    swcMinify: true,
+    reactStrictMode: true,
     images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "placehold.co",
-            },
-        ],
         minimumCacheTTL: 31536000,
     },
 }

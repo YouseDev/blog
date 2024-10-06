@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import CustomHeading from "../shared/CustomHeading"
 
 const ProjectContainer = ({ projects }: { projects: TProject[] }) => {
     return (
@@ -86,9 +87,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
                 pt="6"
                 px={{ base: "2", md: "4" }}
             >
-                <Heading as="h3" size="lg">
-                    {project.title}
-                </Heading>
+                <CustomHeading size="2xl">{project.title}</CustomHeading>
                 <Text>{project.description}</Text>
             </VStack>
         </Stack>

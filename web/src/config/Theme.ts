@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { baseTheme, extendBaseTheme } from "@chakra-ui/react"
 import { Tajawal } from "next/font/google"
 
 export const customFont = Tajawal({
@@ -8,12 +8,11 @@ export const customFont = Tajawal({
     preload: true,
 })
 
-const Theme = extendTheme({
+const Theme = extendBaseTheme({
     fonts: {
         heading: `${customFont.style.fontFamily}`,
         body: `${customFont.style.fontFamily}`,
     },
-
     styles: {
         global: {
             "html, body": {

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import AnimationConfig from "@/config/AnimationConfig"
+import CustomHeading from "../shared/CustomHeading"
 
 const HomeContainer = ({ allPostsData }: { allPostsData: TPostData[] }) => {
     return (
@@ -73,9 +74,7 @@ const PostCard = ({ post }: { post: TPostData }) => {
                 pb={{ base: "4", md: "4" }}
                 pt={{ base: "4", md: "6" }}
             >
-                <Heading as="h3" size="lg">
-                    {post.title}
-                </Heading>
+                <CustomHeading size="2xl">{post.title}</CustomHeading>
             </VStack>
         </Box>
     )
