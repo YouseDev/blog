@@ -8,8 +8,8 @@ import { useMemo } from "react"
 import { usePathname } from "next/navigation"
 import dynamic from "next/dynamic"
 
-const ChakraBaseProvider = dynamic(
-    () => import("@chakra-ui/react").then((mod) => mod.ChakraBaseProvider),
+const ChakraProvider = dynamic(
+    () => import("@chakra-ui/provider").then((mod) => mod.ChakraProvider),
     { ssr: false },
 )
 
@@ -21,11 +21,11 @@ const Container = ({ children }: { children: React.ReactNode }) => {
     }, [pathname])
 
     return (
-        <ChakraBaseProvider theme={Theme}>
+        <ChakraProvider theme={Theme}>
             {!hideHeader && <Header />}
             <Box as="main">{children}</Box>
             {!hideHeader && <Footer />}
-        </ChakraBaseProvider>
+        </ChakraProvider>
     )
 }
 
