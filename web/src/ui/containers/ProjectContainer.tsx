@@ -38,6 +38,7 @@ const ProjectContainer = ({ projects }: { projects: TProject[] }) => {
                             isExternal
                             key={i}
                             href={project.link}
+                            rel="noopener noreferrer"
                             _hover={{ textDecoration: "none" }}
                         >
                             <ProjectCard project={project} />
